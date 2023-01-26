@@ -1,0 +1,98 @@
+.info-section {
+  background-color: darken($basic-white, 8);
+  background-image: url("/images/info-section-mobile.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @include tablet {
+    background-image: url("/images/info-section-tablet.png");
+  }
+
+  @include desktop {
+    background-image: url("/images/info-section-desktop.png");
+  }
+
+  @include fullhd {
+    background-image: url("/images/info-section-fullhd.png");
+  }
+}
+
+.info-section__container {
+  padding-top: 120px;
+  padding-right: 2.5vw;
+  padding-bottom: 40px;
+  padding-left: 2.5vw;
+  display: flex;
+
+  @include tablet {
+    padding-top: 78px;
+    padding-right: calc(108px - 5vw);
+    padding-bottom: 78px;
+    justify-content: flex-end;
+  }
+
+  @include desktop {
+    padding-top: 98px;
+    padding-right: calc(210px - 5vw);
+    padding-bottom: 168px;
+  }
+
+  @include fullhd {
+    padding-top: 124px;
+    padding-right: 100px;
+    padding-bottom: 124px;
+  }
+}
+
+.info-section__content-wrapper {
+  font-size: 16px;
+
+  * {
+    margin-top: 0;
+  }
+
+  &>*:not(:last-child) {
+    margin-bottom: 16px;
+  }
+
+  h2 {
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 1.2;
+    color: $title-color;
+
+    &::first-line {
+      font-size: 46px;
+      font-weight: 700;
+    }
+  }
+
+  @include tablet {
+    max-width: 300px;
+
+    h2 {
+      font-size: 40px;
+
+      &::first-line {
+        font-size: 56px;
+      }
+    }
+  }
+
+  @include fullhd {
+    max-width: 480px;
+    font-size: 24px;
+
+    h2 {
+      font-size: 60px;
+
+      &::first-line {
+        font-size: 84px;
+      }
+    }
+  }
+}
+
+.info-section__button {
+  margin-top: 32px;
+}
