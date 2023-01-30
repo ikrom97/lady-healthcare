@@ -22,8 +22,6 @@
 </head>
 
 <body class="page__body">
-  <x-window-size::save-to-session />
-  
   <x-page-header />
 
   @yield('content')

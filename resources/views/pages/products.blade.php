@@ -1,9 +1,9 @@
-@extends('index')
+@extends('app')
 
 @section('title', 'Lady healthcare | Препараты')
 
 @section('content')
-  <main class="drugs-content">
-    drugs-page
+  <main class="content">
+    products-page
   </main>
 @endsection

@@ -106,9 +106,9 @@ class ProductSeeder extends Seeder
         'description' => $product['description'],
         'category_id' => $product['direction_id'],
         'prescription_id' => $prescriptionID,
-        'image' => str_replace('img/products', 'products/images', $product['img']),
-        'image_thumb' => str_replace('img/products', 'products/images/thumbs', $product['img_thumb']),
-        'file' => str_replace('files/products', 'products/files', $product['instruction']),
+        'image' => str_replace('img', 'images', $product['img']),
+        'image_thumb' => str_replace('img/products', 'images/products/thumbs', $product['img_thumb']),
+        'file' => $product['instruction'],
         'url' => $product['url'],
         'body' => '<h2>Состав</h2>' . $product['compound']
           . '<h2>Показания к применению</h2>' . $product['indications']

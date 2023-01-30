@@ -9,21 +9,7 @@ class PageController extends Controller
 {
   public function main()
   {
-    if (isMobile()) {
-      $GLOBALS['products'] = Product::orderBy('views', 'desc')->take(4)->get();
-    }
-
-    if (isTablet()) {
-      $GLOBALS['products'] = Product::orderBy('views', 'desc')->take(6)->get();
-    }
-
-    if (isDesktop()) {
-      $GLOBALS['products'] = Product::orderBy('views', 'desc')->take(12)->get();
-    }
-
-    if (isFullHd()) {
-      $GLOBALS['products'] = Product::orderBy('views', 'desc')->take(18)->get();
-    }
+    $GLOBALS['products'] = Product::orderBy('views', 'desc')->take(18)->get();
 
     return view('pages.main');
   }
@@ -38,14 +24,14 @@ class PageController extends Controller
     return view('pages.career');
   }
 
-  public function drugs()
+  public function products()
   {
-    return view('pages.drugs');
+    return view('pages.products');
   }
 
-  public function drugsSelected(Request $request)
+  public function productsSelected(Request $request)
   {
-    return view('pages.drugs-selected');
+    return view('pages.products-selected');
   }
 
   public function contacts()

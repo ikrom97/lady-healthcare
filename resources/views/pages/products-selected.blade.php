@@ -1,4 +1,4 @@
-@extends('index')
+@extends('app')
 
 @section('title', 'Lady healthcare | ' . $data->product->title)
 
