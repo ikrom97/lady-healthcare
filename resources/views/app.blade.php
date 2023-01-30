@@ -18,12 +18,13 @@
 
   <link rel="stylesheet" href="{{ mix('css/style.min.css') }}">
 
+  <x-window-size::save-to-session />
+  
   <title>@yield('title')</title>
 </head>
 
 <body class="page__body">
-  <x-window-size::save-to-session />
-  
+
   <x-page-header />
 
   @yield('content')
