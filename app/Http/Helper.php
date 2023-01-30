@@ -62,3 +62,23 @@ function getFoundationItems()
 
   return $foundationItems;
 }
+
+function isMobile(): bool
+{
+  return windowWidthLessThan(744) && !windowWidthGreaterThan(743);
+}
+
+function isTablet(): bool
+{
+  return !windowWidthLessThan(744) && windowWidthLessThan(1280) && !windowWidthGreaterThan(1279);
+}
+
+function isDesktop(): bool
+{
+  return !windowWidthLessThan(1280) && windowWidthLessThan(1920) && !windowWidthGreaterThan(1919);
+}
+
+function isFullHD(): bool
+{
+  return windowWidthGreaterThan(1919);
+}

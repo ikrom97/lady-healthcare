@@ -9,7 +9,21 @@ class PageController extends Controller
 {
   public function main()
   {
-    $GLOBALS['products'] = Product::orderBy('views', 'desc')->take(4)->get();
+    if (isMobile()) {
+      $GLOBALS['products'] = Product::orderBy('views', 'desc')->take(4)->get();
+    }
+
+    if (isTablet()) {
+      $GLOBALS['products'] = Product::orderBy('views', 'desc')->take(6)->get();
+    }
+
+    if (isDesktop()) {
+      $GLOBALS['products'] = Product::orderBy('views', 'desc')->take(12)->get();
+    }
+
+    if (isFullHd()) {
+      $GLOBALS['products'] = Product::orderBy('views', 'desc')->take(18)->get();
+    }
 
     return view('pages.main');
   }
