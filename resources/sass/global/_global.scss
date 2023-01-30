@@ -3,6 +3,8 @@
 *::after {
   box-sizing: border-box;
   color: inherit;
+  word-break: break-word;
+  font-size: inherit;
 }
 
 *:focus-visible {

@@ -6,7 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <meta name="googlebot" content="noindex">
+  <meta name="robots" content="none" />
+  <meta name="googlebot" content="noindex, nofollow" />
+  <meta name="yandex" content="none">
 
   <link rel="icon" href="{{ asset('favicon.ico') }}">
   <link rel="icon" href="{{ asset('favicons/icon.svg') }}" type="image/svg+xml">
@@ -23,7 +25,7 @@
 
   @yield('content')
 
-  <x-page-footer/>
+  <x-page-footer />
 
   <script src="{{ mix('js/script.min.js') }}"></script>
 </body>

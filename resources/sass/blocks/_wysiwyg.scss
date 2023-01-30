@@ -1,0 +1,39 @@
+.wysiwyg {
+  color: $font-color;
+
+  * {
+    margin-top: 0;
+    margin-bottom: 16px;
+  }
+
+  h1,
+  h2,
+  h3 {
+    line-height: 1.2;
+    font-weight: 700;
+    color: $title-color;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  h3 {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+
+  br {
+    display: none;
+  }
+
+  @include tablet {
+    br {
+      display: inline;
+    }
+  }
+}

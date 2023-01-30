@@ -1,0 +1,50 @@
+.career-section {
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  overflow: hidden;
+
+  @include tablet {
+    flex-direction: row;
+  }
+}
+
+.career-section__wysiwyg {
+  color: $basic-white;
+  background-color: $primary;
+  padding: 24px;
+  width: 100%;
+
+  h1,
+  h2,
+  h3 {
+    color: $basic-white;
+  }
+
+  @include tablet {
+    padding: 32px 24px;
+    max-width: 66%;
+  }
+
+  @include desktop {
+    padding: 32px 64px;
+  }
+}
+
+.career-section__button-wrapper {
+  min-height: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background:
+    linear-gradient(0deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
+    url("/images/career-section.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 24px;
+  flex-grow: 1;
+
+  @include tablet {
+    min-width: 280px;
+  }
+}

@@ -19,7 +19,7 @@ function getAppPages(): array
     ],
     [
       'title' => 'Препараты',
-      'route' => route('page.drugs'),
+      'route' => route('page.products'),
     ],
     [
       'title' => 'Контакты',
@@ -33,4 +33,32 @@ function getAppPages(): array
 function isCurrentPage($page): bool
 {
   return str_contains(url()->current(), $page['route']);
+}
+
+function getFoundationItems()
+{
+  $foundationItems = [
+    [
+      'title' => 'О компании',
+      'route' => route('page.about') . '#about',
+      'image' => '/images/foundation-section-about-item.jpg',
+    ],
+    [
+      'title' => 'Миссия',
+      'route' => route('page.about') . '#mission',
+      'image' => '/images/foundation-section-mission-item.jpg',
+    ],
+    [
+      'title' => 'Видение',
+      'route' => route('page.about') . '#vision',
+      'image' => '/images/foundation-section-vision-item.jpg',
+    ],
+    [
+      'title' => 'Ценности',
+      'route' => route('page.about') . '#values',
+      'image' => '/images/foundation-section-values-item.jpg',
+    ],
+  ];
+
+  return $foundationItems;
 }

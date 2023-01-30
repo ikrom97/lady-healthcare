@@ -1,0 +1,12 @@
+.products-section__wysiwyg {
+  margin-bottom: 24px;
+
+  @include desktop {
+    margin-bottom: 32px;
+  }
+}
+
+.products-section__text-link {
+  margin: 0 auto;
+  margin-top: 24px;
+}

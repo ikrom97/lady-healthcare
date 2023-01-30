@@ -2,37 +2,40 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
-    public function main()
-    {
-        return view('pages.main');
-    }
+  public function main()
+  {
+    $GLOBALS['products'] = Product::orderBy('views', 'desc')->take(4)->get();
 
-    public function about()
-    {
-        return view('pages.about');
-    }
+    return view('pages.main');
+  }
 
-    public function career()
-    {
-        return view('pages.career');
-    }
+  public function about()
+  {
+    return view('pages.about');
+  }
 
-    public function drugs()
-    {
-        return view('pages.drugs');
-    }
+  public function career()
+  {
+    return view('pages.career');
+  }
 
-    public function drugsSelected(Request $request)
-    {
-        return view('pages.drugs-selected');
-    }
+  public function drugs()
+  {
+    return view('pages.drugs');
+  }
 
-    public function contacts()
-    {
-        return view('pages.contacts');
-    }
+  public function drugsSelected(Request $request)
+  {
+    return view('pages.drugs-selected');
+  }
+
+  public function contacts()
+  {
+    return view('pages.contacts');
+  }
 }
