@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\TemplatesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,3 +21,5 @@ Route::get('/career', [PageController::class, 'career'])->name('page.career');
 Route::get('/products', [PageController::class, 'products'])->name('page.products');
 Route::get('/products/{slug}', [PageController::class, 'productsSelected'])->name('page.products.selected');
 Route::get('/contacts', [PageController::class, 'contacts'])->name('page.contacts');
+
+Route::post('/templates/products', [TemplatesController::class, 'products']);

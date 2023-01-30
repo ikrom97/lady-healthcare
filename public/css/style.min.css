@@ -584,7 +584,7 @@ input[type=search]::-webkit-search-results-decoration {
 }
 @media (min-width: 744px) {
   .info-section__content-wrapper {
-    max-width: 300px;
+    max-width: 320px;
   }
   .info-section__content-wrapper h2 {
     font-size: 40px;
@@ -1031,6 +1031,12 @@ input[type=search]::-webkit-search-results-decoration {
 .products-section__text-link {
   margin: 0 auto;
   margin-top: 24px;
+}
+@media (min-width: 1280px) {
+  .products-section__text-link {
+    margin-left: auto;
+    margin-right: 0;
+  }
 }
 
 /*# sourceMappingURL=style.min.css.map*/

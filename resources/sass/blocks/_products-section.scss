@@ -9,4 +9,9 @@
 .products-section__text-link {
   margin: 0 auto;
   margin-top: 24px;
+
+  @include desktop {
+    margin-left: auto;
+    margin-right: 0;
+  }
 }

@@ -11,7 +11,7 @@
     </p>
   </x-wysiwyg>
 
-  <x-products-list />
+  <div data-container="products"></div>
 
   <x-text-link class="products-section__text-link" href="{{ route('page.products') }}">
     Все препараты

@@ -9,8 +9,6 @@ class PageController extends Controller
 {
   public function main()
   {
-    $GLOBALS['products'] = Product::orderBy('views', 'desc')->take(18)->get();
-
     return view('pages.main');
   }
 

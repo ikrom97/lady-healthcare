@@ -22,13 +22,15 @@
 </head>
 
 <body class="page__body">
+  <x-icons />
+
   <x-page-header />
 
   @yield('content')
 
   <x-page-footer />
 
-  <script src="{{ mix('js/script.min.js') }}"></script>
+  <script src="{{ mix('js/app.js') }}"></script>
 </body>
 
 </html>
