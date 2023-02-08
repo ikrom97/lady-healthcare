@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { getDeviceName } from '../modules/device.js';
 
-if (document.querySelector('.content--main')) {
+if (document.querySelector('.main-content')) {
   const productsContainer = document.querySelector('[data-container="products"]');
   const productsQuantity = {
     'mobile': 4,
@@ -11,7 +11,7 @@ if (document.querySelector('.content--main')) {
   };
 
   if (productsContainer) {
-    axios.post('/templates/products', { quantity: productsQuantity[getDeviceName()] })
+    axios.post('/data/products', { quantity: productsQuantity[getDeviceName()] })
       .then(({ data }) => productsContainer.innerHTML = data);
   }
 }

@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use Illuminate\Http\Request;
 
-class TemplatesController extends Controller
+class DataController extends Controller
 {
   public function products()
   {

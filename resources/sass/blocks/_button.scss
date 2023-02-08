@@ -1,8 +1,9 @@
 .button {
   display: flex;
-  width: max-content;
   justify-content: center;
   align-items: center;
+  gap: 8px;
+  width: max-content;
   min-height: 48px;
   padding: 0 32px;
   border-radius: 8px;
@@ -16,17 +17,5 @@
     background-color: $primary;
     color: $basic-white;
     box-shadow: 0px 16px 42px rgba(8, 133, 162, 0.5);
-  }
-}
-
-.button__icon {
-  display: block;
-
-  &--before {
-    margin-right: 8px;
-  }
-
-  &--after {
-    margin-left: 8px;
   }
 }

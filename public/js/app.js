@@ -2120,7 +2120,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_device_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../modules/device.js */ "./resources/js/modules/device.js");
 
 
-if (document.querySelector('.content--main')) {
+if (document.querySelector('.main-content')) {
   var productsContainer = document.querySelector('[data-container="products"]');
   var productsQuantity = {
     'mobile': 4,
@@ -2129,7 +2129,7 @@ if (document.querySelector('.content--main')) {
     'fullhd': 18
   };
   if (productsContainer) {
-    axios__WEBPACK_IMPORTED_MODULE_0___default().post('/templates/products', {
+    axios__WEBPACK_IMPORTED_MODULE_0___default().post('/data/products', {
       quantity: productsQuantity[(0,_modules_device_js__WEBPACK_IMPORTED_MODULE_1__.getDeviceName)()]
     }).then(function (_ref) {
       var data = _ref.data;
