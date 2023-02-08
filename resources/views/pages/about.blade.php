@@ -3,7 +3,7 @@
 @section('title', 'Lady healthcare | О нас')
 
 @section('content')
-  <main class="about-content">
+  <main class="content about-content">
     <ul class="breadcrumbs container">
       <li class="breadcrumbs__item">
         <a class="breadcrumbs__link" href="{{ route('page.main') }}">
@@ -50,6 +50,45 @@
             </p>
           </div>
           <div class="about-section__list-images" style="background-image: url('/images/about-section-vision.jpg')"></div>
+        </li>
+      </ul>
+    </section>
+
+    <section class="values-section container">
+      <h2 class="values-section__title">Наши ценности</h2>
+
+      <ul class="values-list">
+        <li class="values-list__item">
+          <div class="values-list__wysiwyg wysiwyg">
+            <h3>Внимательность и этика</h3>
+            <p>
+              Один из главных принципов нашей корпоративной культуры – забота о здоровье каждого. С помощью нашей продукции мы стараемся повысить благополучие и уровень жизни людей, что является приоритетным путем развития компании
+            </p>
+          </div>
+        </li>
+        <li class="values-list__item">
+          <div class="values-list__wysiwyg wysiwyg">
+            <h3>Совершенствование</h3>
+            <p>
+              Мы стараемся постоянно совершенствовать методы создания своей продукции и находимся в поиске инноваций для производства еще более качественных лекарств, чтобы улучшить доступ населения к необходимой медицинской помощи
+            </p>
+          </div>
+        </li>
+        <li class="values-list__item">
+          <div class="values-list__wysiwyg wysiwyg">
+            <h3>Открытость и доверие</h3>
+            <p>
+              Доверие между коллегами – основа деятельности нашей компании. Также мы ведем открытый бизнес с партнерами на законной и взаимовыгодной основах. Укрепление взаимопонимания является приоритетом при работе во всех направлениях
+            </p>
+          </div>
+        </li>
+        <li class="values-list__item">
+          <div class="values-list__wysiwyg wysiwyg">
+            <h3>Забота о партнерах</h3>
+            <p>
+              Наша компания взаимодействует со специалистами здравоохранения, пациентами, производителями фармацевтической продукции, деловыми партнерами. Мы учитываем потребности, пожелания и интересы каждой группы людей
+            </p>
+          </div>
         </li>
       </ul>
     </section>

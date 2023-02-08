@@ -1053,4 +1053,118 @@ input[type=search]::-webkit-search-results-decoration {
   margin: 0 8px;
 }
 
+.about-section__wysiwyg {
+  margin-bottom: 32px;
+}
+@media (min-width: 1280px) {
+  .about-section__wysiwyg {
+    margin-bottom: 64px;
+  }
+}
+
+.about-section__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 16px;
+}
+@media (min-width: 744px) {
+  .about-section__list {
+    gap: 24px;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (min-width: 1920px) {
+  .about-section__list {
+    gap: 32px;
+  }
+}
+
+.about-section__list-item {
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.about-section__list-wysiwygs {
+  padding: 24px;
+  background-color: #0885A2;
+  color: #FFFFFF;
+  flex-grow: 1;
+}
+.about-section__list-wysiwygs h1,
+.about-section__list-wysiwygs h2,
+.about-section__list-wysiwygs h3,
+.about-section__list-wysiwygs h4 {
+  color: #FFFFFF;
+}
+@media (min-width: 744px) {
+  .about-section__list-wysiwygs {
+    padding-top: 32px;
+  }
+}
+@media (min-width: 1280px) {
+  .about-section__list-wysiwygs {
+    padding: 40px 64px;
+  }
+}
+
+.about-section__list-images {
+  width: 100%;
+  height: 255px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+@media (min-width: 1280px) {
+  .about-section__list-images {
+    height: 360px;
+  }
+}
+
+.values-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 16px;
+}
+@media (min-width: 1280px) {
+  .values-list {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+}
+@media (min-width: 1920px) {
+  .values-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.values-list__item {
+  background: #F1F3F4;
+  border-radius: 8px;
+  padding: 24px;
+}
+@media (min-width: 744px) {
+  .values-list__item {
+    padding: 32px 24px;
+  }
+}
+@media (min-width: 1280px) {
+  .values-list__item {
+    padding: 32px;
+  }
+}
+
+.values-section__title {
+  margin-bottom: 24px;
+  font-weight: 700;
+  font-size: 21px;
+  line-height: 29px;
+  color: #1D1D1D;
+}
+
 /*# sourceMappingURL=style.min.css.map*/
