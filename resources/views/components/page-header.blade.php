@@ -1,6 +1,6 @@
 <header class="page-header container">
   <nav class="page-header__main-navigation main-navigation">
-    <a class="main-navigation__main-logo main-logo" @if (request()->segment(1)) href="{{ route('page.main') }}" @endif>
+    <a class="main-navigation__main-logo main-logo" @if (request()->segment(1)) href="{{ route('page.home') }}" @endif>
       <img class="main-logo__image" src="{{ asset('images/main-logo.svg') }}" width="96" height="36" alt="Вернуться на главную страницу">
     </a>
 

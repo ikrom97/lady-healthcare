@@ -1,39 +1,46 @@
 .wysiwyg {
+  position: relative;
   color: $font-color;
-
-  * {
-    margin-top: 0;
-    margin-bottom: 16px;
-  }
+  width: 100%;
+  min-height: 24px;
 
   h1,
-  h2,
-  h3 {
-    line-height: 1.2;
-    font-weight: 700;
-    color: $title-color;
-  }
-
-  h1 {
-    font-size: 24px;
-  }
-
   h2 {
-    font-size: 20px;
+    line-height: 28px;
+    font-size: 21px;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 16px;
+    color: $title-color;
   }
 
   h3 {
     font-size: 16px;
+    font-weight: 500;
+    line-height: 19px;
+    margin-top: 0;
     margin-bottom: 8px;
   }
 
-  br {
-    display: none;
-  }
+  p {
+    margin: 0;
+    display: inline;
 
-  @include tablet {
-    br {
-      display: inline;
+    &:has(br) {
+      display: block;
+    }
+
+    &:empty {
+      height: 21px;
+    }
+
+    *:empty {
+      display: block;
+      height: 21px;
+    }
+
+    @include tablet {
+      display: block;
     }
   }
 }

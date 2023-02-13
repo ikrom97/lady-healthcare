@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Text;
+
 /**
  * Custom Helper functions
  *
@@ -61,4 +63,15 @@ function getFoundationItems()
   ];
 
   return $foundationItems;
+}
+
+function texts(): array
+{
+  $texts = Text::where('page', request()->segment(1) ?? 'home')->get();
+
+  foreach ($texts as $text) {
+    $result[$text->slug] = $text->text;
+  }
+
+  return $result;
 }

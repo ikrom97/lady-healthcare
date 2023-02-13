@@ -6,7 +6,7 @@
   <main class="content about-content">
     <ul class="breadcrumbs container">
       <li class="breadcrumbs__item">
-        <a class="breadcrumbs__link" href="{{ route('page.main') }}">
+        <a class="breadcrumbs__link" href="{{ route('page.home') }}">
           Главная
         </a>
         <svg class="breadcrumbs__icon" width="24" height="24">

@@ -3,7 +3,7 @@
     <iframe class="page-footer__map" src="https://yandex.ru/map-widget/v1/?ll=-0.236027%2C51.473532&z=12.93" frameborder="0" allowfullscreen="true"></iframe>
 
     <div class="page-footer__contacts-wrapper">
-      <a class="page-footer__main-logo main-logo" @if (request()->segment(1)) href="{{ route('page.main') }}" @endif>
+      <a class="page-footer__main-logo main-logo" @if (request()->segment(1)) href="{{ route('page.home') }}" @endif>
         <img class="main-logo__image" src="{{ asset('images/main-logo--white.svg') }}" width="96" height="36" alt="Вернуться на главную страницу">
       </a>
 

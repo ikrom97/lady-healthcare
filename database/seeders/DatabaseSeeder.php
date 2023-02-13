@@ -11,9 +11,11 @@ class DatabaseSeeder extends Seeder
    *
    * @return void
    */
+
   public function run()
   {
     $this->call([
+      TextSeeder::class,
       CategorySeeder::class,
       PrescriptionSeeder::class,
       ProductSeeder::class,

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\DataController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\TextController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [PageController::class, 'main'])->name('page.main');
+Route::get('/', [PageController::class, 'home'])->name('page.home');
 Route::get('/about', [PageController::class, 'about'])->name('page.about');
 Route::get('/career', [PageController::class, 'career'])->name('page.career');
 Route::get('/products', [PageController::class, 'products'])->name('page.products');
@@ -23,3 +24,5 @@ Route::get('/products/{slug}', [PageController::class, 'productsSelected'])->nam
 Route::get('/contacts', [PageController::class, 'contacts'])->name('page.contacts');
 
 Route::post('/data/products', [DataController::class, 'products']);
+
+Route::post('/admin/texts/update', [TextController::class, 'update']);
