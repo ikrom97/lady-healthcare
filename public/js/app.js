@@ -2363,6 +2363,140 @@ if (document.querySelector('.main-content')) {
 
 /***/ }),
 
+/***/ "./resources/js/pages/products.js":
+/*!****************************************!*\
+  !*** ./resources/js/pages/products.js ***!
+  \****************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _modules_device_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../modules/device.js */ "./resources/js/modules/device.js");
+var _this = undefined;
+
+
+if (document.querySelector('.products-content')) {
+  var productsContainer = document.querySelector('[data-container="products"]');
+  var productsQuantity = {
+    'mobile': 8,
+    'tablet': 12,
+    'desktop': 24,
+    'fullhd': 36
+  };
+  var request = {
+    keyword: null,
+    tag_id: null,
+    prescription_id: null,
+    category_id: null,
+    page: 1,
+    quantity: productsQuantity[(0,_modules_device_js__WEBPACK_IMPORTED_MODULE_1__.getDeviceName)()]
+  };
+  var debounce = function debounce(callback) {
+    var timeoutDelay = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 500;
+    var timeoutId;
+    return function () {
+      for (var _len = arguments.length, rest = new Array(_len), _key = 0; _key < _len; _key++) {
+        rest[_key] = arguments[_key];
+      }
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(function () {
+        return callback.apply(_this, rest);
+      }, timeoutDelay);
+    };
+  };
+  var filter = function filter() {
+    return axios__WEBPACK_IMPORTED_MODULE_0___default().post('/data/products/filter', request).then(function (_ref) {
+      var data = _ref.data;
+      return productsContainer.innerHTML = data;
+    })["catch"](function (error) {
+      return console.log(error);
+    });
+  };
+  document.addEventListener('click', function (evt) {
+    if (evt.target.closest('.pagination__link') && evt.target.href) {
+      evt.preventDefault();
+      request.page = evt.target.href.split('page=')[1];
+      filter();
+    }
+    if (evt.target.closest('.filter__prescription-button')) {
+      evt.target.parentElement.classList.toggle('shown');
+    }
+    if (!evt.target.closest('.filter__prescription')) {
+      document.querySelector('.filter__prescription').classList.remove('shown');
+    }
+    if (evt.target.closest('.filter__category-button')) {
+      evt.target.parentElement.classList.toggle('shown');
+    }
+    if (!evt.target.closest('.filter__category')) {
+      document.querySelector('.filter__category').classList.remove('shown');
+    }
+    if (evt.target.classList.contains('filter__prescription-item')) {
+      request.prescription_id = evt.target.dataset.prescriptionId;
+      request.page = 1;
+      evt.target.closest('.filter__prescription').classList.remove('shown');
+      if (evt.target.dataset.prescriptionId) {
+        document.querySelector('.filter__prescription-button span').textContent = evt.target.textContent;
+      } else {
+        document.querySelector('.filter__prescription-button span').textContent = 'Рецептурность';
+      }
+      filter();
+    }
+    if (evt.target.classList.contains('filter__category-item')) {
+      request.category_id = evt.target.dataset.categoryId;
+      request.page = 1;
+      evt.target.closest('.filter__category').classList.remove('shown');
+      if (evt.target.dataset.categoryId) {
+        document.querySelector('.filter__category-button span').textContent = evt.target.textContent;
+      } else {
+        document.querySelector('.filter__category-button span').textContent = 'Направления';
+      }
+      filter();
+    }
+  });
+  document.querySelector('.filter__form').addEventListener('click', function (evt) {
+    if (evt.target.type == 'radio') {
+      document.querySelector('.filter__form').classList.add('shown');
+      request.tag_id = evt.target.value;
+      request.page = 1;
+      request.prescription_id = null;
+      request.category_id = null;
+      document.querySelector('.filter__category-button span').textContent = 'Направления';
+      document.querySelector('.filter__prescription-button span').textContent = 'Рецептурность';
+      filter();
+    }
+    if (evt.target.closest('.filter__reset')) {
+      document.querySelector('.filter__form').classList.remove('shown');
+      request.tag_id = null;
+      request.keyword = null;
+      filter();
+    }
+  });
+  document.querySelector('.filter__input').addEventListener('input', debounce(function (evt) {
+    request.keyword = evt.target.value;
+    request.tag_id = null;
+    request.page = 1;
+    request.prescription_id = null;
+    request.category_id = null;
+    document.querySelector('.filter__category-button span').textContent = 'Направления';
+    document.querySelector('.filter__prescription-button span').textContent = 'Рецептурность';
+    if (document.querySelector('input[type="radio"]:checked')) {
+      document.querySelector('input[type="radio"]:checked').checked = false;
+    }
+    if (evt.target.value) {
+      document.querySelector('.filter__form').classList.add('shown');
+    }
+    if (!evt.target.value) {
+      document.querySelector('.filter__form').classList.remove('shown');
+    }
+    filter();
+  }));
+  filter();
+}
+
+/***/ }),
+
 /***/ "./resources/sass/style.scss":
 /*!***********************************!*\
   !*** ./resources/sass/style.scss ***!
@@ -2750,6 +2884,7 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 	__webpack_require__.O(undefined, ["css/style.min"], function() { return __webpack_require__("./resources/js/modules/device.js"); })
 /******/ 	__webpack_require__.O(undefined, ["css/style.min"], function() { return __webpack_require__("./resources/js/modules/texts.js"); })
 /******/ 	__webpack_require__.O(undefined, ["css/style.min"], function() { return __webpack_require__("./resources/js/pages/main.js"); })
+/******/ 	__webpack_require__.O(undefined, ["css/style.min"], function() { return __webpack_require__("./resources/js/pages/products.js"); })
 /******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/style.min"], function() { return __webpack_require__("./resources/sass/style.scss"); })
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	

@@ -24,5 +24,6 @@ Route::get('/products/{slug}', [PageController::class, 'productsSelected'])->nam
 Route::get('/contacts', [PageController::class, 'contacts'])->name('page.contacts');
 
 Route::post('/data/products', [DataController::class, 'products']);
+Route::post('/data/products/filter', [DataController::class, 'productsFilter']);
 
 Route::post('/admin/texts/update', [TextController::class, 'update']);

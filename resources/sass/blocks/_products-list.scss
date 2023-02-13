@@ -22,3 +22,11 @@
 .products-list__item {
   display: flex;
 }
+
+.products-list__pagination {
+  margin-top: 32px;
+
+  &:empty {
+    margin-top: 0;
+  }
+}

@@ -17,4 +17,31 @@ class DataController extends Controller
       return view('templates.products', compact('products'))->render();
     }
   }
+
+  public function productsFilter()
+  {
+    $products = Product::orderBy('views', 'desc');
+
+    if (request('tag')) {
+      # code...
+    }
+
+    if (request('keyword')) {
+      $products = $products
+        ->where('title', 'like', '%' . request('keyword') . '%')
+        ->orWhere('description', 'like', '%' . request('keyword') . '%');
+    }
+
+    if (request('prescription_id')) {
+      $products = $products->where('prescription_id', request('prescription_id'));
+    }
+
+    if (request('category_id')) {
+      $products = $products->where('category_id', request('category_id'));
+    }
+
+    $products = $products->paginate(request('quantity'));
+
+    return view('templates.products', compact('products'))->render();
+  }
 }

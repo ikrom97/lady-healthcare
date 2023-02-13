@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
+use App\Models\Prescription;
 use App\Models\Product;
+use App\Models\Tag;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
@@ -24,7 +27,11 @@ class PageController extends Controller
 
   public function products()
   {
-    return view('pages.products');
+    $data['tags'] = Tag::where('shown', true)->take(4)->get();
+    $data['prescriptions'] = Prescription::orderBy('title')->get();
+    $data['categories'] = Category::orderBy('title')->get();
+
+    return view('pages.products', compact('data'));
   }
 
   public function productsSelected(Request $request)
