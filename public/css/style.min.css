@@ -1146,7 +1146,10 @@ input[type=search]::-webkit-search-results-decoration {
 .about-section__list-wysiwygs h1,
 .about-section__list-wysiwygs h2,
 .about-section__list-wysiwygs h3,
-.about-section__list-wysiwygs h4 {
+.about-section__list-wysiwygs h4,
+.about-section__list-wysiwygs p,
+.about-section__list-wysiwygs ul,
+.about-section__list-wysiwygs ol {
   color: #FFFFFF;
 }
 @media (min-width: 744px) {
@@ -1210,10 +1213,6 @@ input[type=search]::-webkit-search-results-decoration {
 
 .values-section__title {
   margin-bottom: 24px;
-  font-weight: 700;
-  font-size: 21px;
-  line-height: 29px;
-  color: #1D1D1D;
 }
 
 /*# sourceMappingURL=style.min.css.map*/
