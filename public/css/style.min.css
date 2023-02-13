@@ -1215,4 +1215,54 @@ input[type=search]::-webkit-search-results-decoration {
   margin-bottom: 24px;
 }
 
+.career-content__image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center;
+     object-position: center;
+}
+
+.career-content__steps ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 24px;
+  counter-reset: steps;
+}
+@media (min-width: 1280px) {
+  .career-content__steps ol {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: 1920px) {
+  .career-content__steps ol {
+    gap: 64px;
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+.career-content__steps ol li {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  counter-increment: steps;
+}
+.career-content__steps ol li::before {
+  content: counter(steps);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0885A2;
+  color: #FFFFFF;
+  border-radius: 50%;
+  width: 64px;
+  height: 64px;
+  aspect-ratio: 1/1;
+  font-size: 28px;
+  font-weight: 700;
+}
+
 /*# sourceMappingURL=style.min.css.map*/

@@ -141,6 +141,7 @@
 
 .simditor {
   position: relative;
+  width: 100%;
 }
 
 .simditor .simditor-wrapper {
