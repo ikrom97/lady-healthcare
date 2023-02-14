@@ -1,5 +1,3 @@
-import './modules/texts.js';
-
 const globalSearch = document.querySelector('.global-search');
 
 document.querySelector('.main-navigation__toggler')

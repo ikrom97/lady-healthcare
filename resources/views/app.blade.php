@@ -40,6 +40,7 @@
     <script src="{{ asset('simditor/hotkeys.js') }}"></script>
     <script src="{{ asset('simditor/uploader.js') }}"></script>
     <script src="{{ asset('simditor/simditor.js') }}"></script>
+    <script src="{{ asset('js/admin.js') }}"></script>
   @endif
 
   <script src="{{ mix('js/app.js') }}"></script>
