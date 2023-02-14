@@ -105,6 +105,11 @@ class TextSeeder extends Seeder
         'page' => 'products',
         'text' => '<h2>Популярные препараты</h2>',
       ],
+      [
+        'slug' => 'contacts-info',
+        'page' => 'contacts',
+        'text' => '<h1>Связь с нами</h1><p>Для разъяснения непонятных вопросов, пожеланий</p><p>и предложений свяжитесь с нами по телефону, электронной&nbsp;</p><p>почте или в социальных сетях.</p>',
+      ],
     ];
 
     foreach ($texts as $text) {
