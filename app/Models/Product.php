@@ -18,4 +18,9 @@ class Product extends Model
   {
     return $this->belongsTo(Prescription::class);
   }
+
+  public function tags()
+  {
+    return $this->belongsToMany(Tag::class);
+  }
 }

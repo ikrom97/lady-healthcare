@@ -22,8 +22,12 @@ class DataController extends Controller
   {
     $products = Product::orderBy('views', 'desc');
 
-    if (request('tag')) {
-      # code...
+    if (request('tag_id')) {
+        $tag_id = request('tag_id');
+
+        $products = $products->whereHas('tags', function ($query) use ($tag_id) {
+          $query->where('id', $tag_id);
+        });
     }
 
     if (request('keyword')) {
