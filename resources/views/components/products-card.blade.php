@@ -4,7 +4,7 @@
   </h3>
 
   <div class="products-card__inner">
-    <img class="products-card__image" src="{{ $product->image_thumb }}" alt="{{ $product->title }}" width="210" height="268">
+    <img class="products-card__image" src="{{ asset($product->image_thumb) }}" alt="{{ $product->title }}" width="210" height="268">
 
     <p class="products-card__category">{{ $product->category->title }}</p>
 

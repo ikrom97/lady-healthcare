@@ -34,9 +34,11 @@ class PageController extends Controller
     return view('pages.products', compact('data'));
   }
 
-  public function productsSelected(Request $request)
+  public function productsSelected($slug)
   {
-    return view('pages.products-selected');
+    $product = Product::where('slug', $slug)->first();
+
+    return view('pages.products-selected', compact('product'));
   }
 
   public function contacts()

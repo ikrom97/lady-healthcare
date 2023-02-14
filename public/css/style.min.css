@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: "Yandex Sans Text";
   font-style: normal;
@@ -153,6 +154,7 @@ input[type=search]::-webkit-search-results-decoration {
   display: block;
 }
 .wysiwyg p:empty {
+  display: block;
   height: 21px;
 }
 .wysiwyg p *:empty {
@@ -1091,6 +1093,8 @@ input[type=search]::-webkit-search-results-decoration {
   font-size: 14px;
   display: flex;
   align-items: center;
+  max-width: 90vw;
+  overflow-y: hidden;
 }
 
 .breadcrumbs__item {
@@ -1100,6 +1104,8 @@ input[type=search]::-webkit-search-results-decoration {
 
 .breadcrumbs__link {
   display: flex;
+  min-width: -moz-max-content;
+  min-width: max-content;
 }
 .breadcrumbs__link--current {
   color: #0885A2;
@@ -1515,6 +1521,82 @@ input:checked + .filter__tag {
   .products-content__attention {
     padding: 24px 64px;
   }
+}
+
+@media (min-width: 1280px) {
+  .products-selected__container {
+    display: flex;
+    gap: 32px;
+  }
+}
+
+.products-selected__top p {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+.products-selected__top img {
+  margin-bottom: 24px;
+  width: 100%;
+  height: auto;
+}
+.products-selected__top div {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.products-selected__top div a {
+  background-color: #F5F5F5;
+  width: 100%;
+}
+@media (min-width: 744px) {
+  .products-selected__top {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 32px;
+  }
+  .products-selected__top p {
+    display: none;
+  }
+  .products-selected__top div::before {
+    content: attr(prescription) " препарат";
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    margin-top: 0;
+    margin-bottom: 16px;
+  }
+}
+@media (min-width: 1280px) {
+  .products-selected__top {
+    display: block;
+    max-width: 340px;
+  }
+  .products-selected__top p {
+    display: block;
+  }
+  .products-selected__top div::before {
+    display: none;
+  }
+}
+@media (min-width: 1920px) {
+  .products-selected__top {
+    max-width: 430px;
+  }
+}
+
+.products-selected__wysiwyg {
+  max-width: 1035px;
+}
+.products-selected__wysiwyg h1,
+.products-selected__wysiwyg h2,
+.products-selected__wysiwyg h3,
+.products-selected__wysiwyg h4 {
+  padding-bottom: 8px;
+  border-bottom: 4px solid #0885A2;
 }
 
 .pagination {

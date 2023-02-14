@@ -100,6 +100,11 @@ class TextSeeder extends Seeder
         'page' => 'products',
         'text' => '<p>Информация, представленная на сайте, не должна&nbsp;</p><p>использоваться для самостоятельной диагностики и лечения</p><p>и не может служить заменой очной консультации врача.</p>',
       ],
+      [
+        'slug' => 'popular-products',
+        'page' => 'products',
+        'text' => '<h2>Популярные препараты</h2>',
+      ],
     ];
 
     foreach ($texts as $text) {

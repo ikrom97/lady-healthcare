@@ -2363,6 +2363,39 @@ if (document.querySelector('.main-content')) {
 
 /***/ }),
 
+/***/ "./resources/js/pages/products-selected.js":
+/*!*************************************************!*\
+  !*** ./resources/js/pages/products-selected.js ***!
+  \*************************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _modules_device_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../modules/device.js */ "./resources/js/modules/device.js");
+
+
+if (document.querySelector('.products-selected')) {
+  var productsContainer = document.querySelector('[data-container="products"]');
+  var productsQuantity = {
+    'mobile': 4,
+    'tablet': 4,
+    'desktop': 4,
+    'fullhd': 6
+  };
+  if (productsContainer) {
+    axios__WEBPACK_IMPORTED_MODULE_0___default().post('/data/products', {
+      quantity: productsQuantity[(0,_modules_device_js__WEBPACK_IMPORTED_MODULE_1__.getDeviceName)()]
+    }).then(function (_ref) {
+      var data = _ref.data;
+      return productsContainer.innerHTML = data;
+    });
+  }
+}
+
+/***/ }),
+
 /***/ "./resources/js/pages/products.js":
 /*!****************************************!*\
   !*** ./resources/js/pages/products.js ***!
@@ -2884,6 +2917,7 @@ module.exports = JSON.parse('{"name":"axios","version":"0.21.4","description":"P
 /******/ 	__webpack_require__.O(undefined, ["css/style.min"], function() { return __webpack_require__("./resources/js/modules/device.js"); })
 /******/ 	__webpack_require__.O(undefined, ["css/style.min"], function() { return __webpack_require__("./resources/js/modules/texts.js"); })
 /******/ 	__webpack_require__.O(undefined, ["css/style.min"], function() { return __webpack_require__("./resources/js/pages/main.js"); })
+/******/ 	__webpack_require__.O(undefined, ["css/style.min"], function() { return __webpack_require__("./resources/js/pages/products-selected.js"); })
 /******/ 	__webpack_require__.O(undefined, ["css/style.min"], function() { return __webpack_require__("./resources/js/pages/products.js"); })
 /******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/style.min"], function() { return __webpack_require__("./resources/sass/style.scss"); })
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);

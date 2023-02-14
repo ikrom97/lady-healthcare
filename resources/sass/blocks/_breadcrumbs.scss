@@ -6,6 +6,8 @@
   font-size: 14px;
   display: flex;
   align-items: center;
+  max-width: 90vw;
+  overflow-y: hidden;
 }
 
 .breadcrumbs__item {
@@ -15,6 +17,7 @@
 
 .breadcrumbs__link {
   display: flex;
+  min-width: max-content;
 
   &--current {
     color: $primary;
