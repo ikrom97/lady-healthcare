@@ -548,23 +548,23 @@ input[type=search]::-webkit-search-results-decoration {
 
 .info-section {
   background-color: #ebebeb;
-  background-image: url("/images/info-section-mobile.png");
+  background-image: url("/images/info-section-mobile.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
 @media (min-width: 744px) {
   .info-section {
-    background-image: url("/images/info-section-tablet.png");
+    background-image: url("/images/info-section-tablet.jpg");
   }
 }
 @media (min-width: 1280px) {
   .info-section {
-    background-image: url("/images/info-section-desktop.png");
+    background-image: url("/images/info-section-desktop.jpg");
   }
 }
 @media (min-width: 1920px) {
   .info-section {
-    background-image: url("/images/info-section-fullhd.png");
+    background-image: url("/images/info-section-fullhd.jpg");
   }
 }
 

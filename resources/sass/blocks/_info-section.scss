@@ -1,19 +1,19 @@
 .info-section {
   background-color: darken($basic-white, 8);
-  background-image: url("/images/info-section-mobile.png");
+  background-image: url("/images/info-section-mobile.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 
   @include tablet {
-    background-image: url("/images/info-section-tablet.png");
+    background-image: url("/images/info-section-tablet.jpg");
   }
 
   @include desktop {
-    background-image: url("/images/info-section-desktop.png");
+    background-image: url("/images/info-section-desktop.jpg");
   }
 
   @include fullhd {
-    background-image: url("/images/info-section-fullhd.png");
+    background-image: url("/images/info-section-fullhd.jpg");
   }
 }
 
