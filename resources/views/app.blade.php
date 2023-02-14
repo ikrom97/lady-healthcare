@@ -17,9 +17,10 @@
   <link rel="manifest" href="{{ asset('manifest.webmanifest') }}">
 
   <link rel="stylesheet" href="{{ mix('css/style.min.css') }}">
-  {{-- @if (session('editMode')) --}}
-  <link rel="stylesheet" href="{{ asset('simditor/simditor.css') }}">
-  {{-- @endif --}}
+
+  @if (session('admin'))
+    <link rel="stylesheet" href="{{ asset('simditor/simditor.css') }}">
+  @endif
 
   <title>@yield('title')</title>
 </head>
@@ -33,13 +34,13 @@
 
   <x-page-footer />
 
-  {{-- @if (session('editMode')) --}}
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-  <script src="{{ asset('simditor/module.js') }}"></script>
-  <script src="{{ asset('simditor/hotkeys.js') }}"></script>
-  <script src="{{ asset('simditor/uploader.js') }}"></script>
-  <script src="{{ asset('simditor/simditor.js') }}"></script>
-  {{-- @endif --}}
+  @if (session('admin'))
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="{{ asset('simditor/module.js') }}"></script>
+    <script src="{{ asset('simditor/hotkeys.js') }}"></script>
+    <script src="{{ asset('simditor/uploader.js') }}"></script>
+    <script src="{{ asset('simditor/simditor.js') }}"></script>
+  @endif
 
   <script src="{{ mix('js/app.js') }}"></script>
 </body>
