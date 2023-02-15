@@ -23,6 +23,7 @@ Route::get('/products', [PageController::class, 'products'])->name('page.product
 Route::get('/products/{slug}', [PageController::class, 'productsSelected'])->name('page.products.selected');
 Route::get('/contacts', [PageController::class, 'contacts'])->name('page.contacts');
 
+Route::post('/data/search', [DataController::class, 'search']);
 Route::post('/data/products', [DataController::class, 'products']);
 Route::post('/data/products/filter', [DataController::class, 'productsFilter']);
 

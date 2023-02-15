@@ -3,10 +3,25 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
-use Illuminate\Http\Request;
+use App\Models\Text;
 
 class DataController extends Controller
 {
+  public function search()
+  {
+    $data['products'] = Product::where('title', 'like', '%' . request('keyword') . '%')
+      ->orWhere('description', 'like', '%' . request('keyword') . '%')
+      ->orWhere('body', 'like', '%' . request('keyword') . '%')
+      ->take(4)
+      ->get();
+
+    $data['texts'] = Text::where('text', 'like', '%' . request('keyword') . '%')
+      ->take(4)
+      ->get();
+
+    return view('templates.search-result', compact('data'))->render();
+  }
+
   public function products()
   {
     $quantity = request('quantity');
@@ -23,11 +38,11 @@ class DataController extends Controller
     $products = Product::orderBy('views', 'desc');
 
     if (request('tag_id')) {
-        $tag_id = request('tag_id');
+      $tag_id = request('tag_id');
 
-        $products = $products->whereHas('tags', function ($query) use ($tag_id) {
-          $query->where('id', $tag_id);
-        });
+      $products = $products->whereHas('tags', function ($query) use ($tag_id) {
+        $query->where('id', $tag_id);
+      });
     }
 
     if (request('keyword')) {

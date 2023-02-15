@@ -8,14 +8,14 @@
 
     <section class="info-section">
       <div class="info-section__container container">
-        <div class="info-section__wysiwyg wysiwyg" data-text="home-info">
+        <div class="info-section__wysiwyg wysiwyg" id="home-info" data-text="home-info">
           {!! texts()['home-info'] !!}
         </div>
       </div>
     </section>
 
     <section class="foundation-section container">
-      <div class="foundation-section__wysiwyg wysiwyg" data-text="home-foundation">
+      <div class="foundation-section__wysiwyg wysiwyg" id="home-foundation" data-text="home-foundation">
         {!! texts()['home-foundation'] !!}
       </div>
 
@@ -41,7 +41,7 @@
 
     <section class="career-section container">
       <div class="career-section__wysiwyg">
-        <div class="wysiwyg" data-text="home-career">
+        <div class="wysiwyg" id="home-career" data-text="home-career">
           {!! texts()['home-career'] !!}
         </div>
       </div>
@@ -54,7 +54,7 @@
     </section>
 
     <section class="products-section container">
-      <div class="products-section__wysiwyg wysiwyg" data-text="home-products">
+      <div class="products-section__wysiwyg wysiwyg" id="home-products" data-text="home-products">
         {!! texts()['home-products'] !!}
       </div>
 

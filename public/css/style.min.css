@@ -278,6 +278,10 @@ input[type=search]::-webkit-search-results-decoration {
   }
 }
 
+.global-search__inner {
+  display: flex;
+}
+
 .global-search__button {
   display: flex;
   justify-content: center;
@@ -303,16 +307,16 @@ input[type=search]::-webkit-search-results-decoration {
 .global-search__input:focus + .global-search__button::after {
   opacity: 1;
 }
-.global-search__input:-moz-placeholder-shown + .global-search__button .close-icon {
+.global-search__input:-moz-placeholder-shown + .global-search__inner .global-search__button .close-icon {
   display: none;
 }
-.global-search__input:placeholder-shown + .global-search__button .close-icon {
+.global-search__input:placeholder-shown + .global-search__inner .global-search__button .close-icon {
   display: none;
 }
-.global-search__input:not(:-moz-placeholder-shown) + .global-search__button .arrow-right-icon {
+.global-search__input:not(:-moz-placeholder-shown) + .global-search__inner .global-search__button .arrow-right-icon {
   display: none;
 }
-.global-search__input:not(:placeholder-shown) + .global-search__button .arrow-right-icon {
+.global-search__input:not(:placeholder-shown) + .global-search__inner .global-search__button .arrow-right-icon {
   display: none;
 }
 @media (min-width: 744px) {
@@ -370,6 +374,43 @@ input[type=search]::-webkit-search-results-decoration {
 .global-search__tag-item--active {
   color: #0885A2;
   border-bottom: 1px solid #0885A2;
+}
+
+.global-search__input:not(:-moz-placeholder-shown) + .global-search__inner .global-search__tag-list {
+  display: none;
+}
+
+.global-search__input:not(:placeholder-shown) + .global-search__inner .global-search__tag-list {
+  display: none;
+}
+
+.global-search__results {
+  position: absolute;
+  top: 24px;
+  left: 0;
+  width: 100%;
+  background-color: whitesmoke;
+  border-radius: 0 0 8px 8px;
+  margin: 0;
+  z-index: -1;
+  list-style: none;
+  padding: 0;
+  padding-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-bottom: 16px;
+}
+
+.global-search__result a {
+  align-items: center;
+  padding: 0 24px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+  -webkit-box-orient: vertical;
 }
 
 .main-logo {
@@ -1419,6 +1460,10 @@ input:checked + .filter__tag {
   }
 }
 
+.filter__prescription {
+  z-index: 2;
+}
+
 .filter__prescription-button,
 .filter__category-button {
   display: flex;
@@ -1530,6 +1575,9 @@ input:checked + .filter__tag {
   }
 }
 
+.products-selected__top {
+  margin-bottom: 32px;
+}
 .products-selected__top p {
   font-weight: 500;
   font-size: 14px;

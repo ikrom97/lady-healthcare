@@ -32,6 +32,26 @@ function getAppPages(): array
   return $pages;
 }
 
+function getPageTitle($name): string
+{
+  switch ($name) {
+    case 'home':
+      return 'Главная';
+
+    case 'about':
+      return 'О нас';
+
+    case 'career':
+      return 'Карьера';
+
+    case 'products':
+      return 'Препараты';
+
+    case 'contacts':
+      return 'Контакты';
+  }
+}
+
 function isCurrentPage($page): bool
 {
   return str_contains(url()->current(), $page['route']);
@@ -74,4 +94,9 @@ function texts(): array
   }
 
   return $result;
+}
+
+function boldKeyword($keyword, $text)
+{
+  return preg_replace("/" . $keyword . "/iu", "<span class='keyword-bold'>" . $keyword .  "</span>", $text);
 }

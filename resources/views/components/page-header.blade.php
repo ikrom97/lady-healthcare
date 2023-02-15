@@ -34,28 +34,27 @@
 
     <input class="global-search__input" id="global-search" name="keyword" type="search" placeholder="Введите запрос поиска" autocomplete="off">
 
-    <button class="global-search__button" type="reset" aria-label="Сбросить">
-      <svg class="arrow-right-icon" width="24" height="24">
-        <use xlink:href="#arrow-right" />
-      </svg>
-      <svg class="close-icon" width="24" height="24">
-        <use xlink:href="#close" />
-      </svg>
-    </button>
+    <div class="global-search__inner">
+      <button class="global-search__button" type="reset" aria-label="Сбросить">
+        <svg class="arrow-right-icon" width="24" height="24">
+          <use xlink:href="#arrow-right" />
+        </svg>
+        <svg class="close-icon" width="24" height="24">
+          <use xlink:href="#close" />
+        </svg>
+      </button>
 
-    <ul class="global-search__tag-list">
-      <li class="global-search__tag-item">
-        <a class="global-search__tag-link" href="#">Витамины</a>
-      </li>
-      <li class="global-search__tag-item">
-        <a class="global-search__tag-link" href="#">Ухо</a>
-      </li>
-      <li class="global-search__tag-item">
-        <a class="global-search__tag-link" href="#">Горло</a>
-      </li>
-      <li class="global-search__tag-item">
-        <a class="global-search__tag-link" href="#">Нос</a>
-      </li>
-    </ul>
+      <ul class="global-search__tag-list">
+        @foreach ($tags as $tag)
+          <li class="global-search__tag-item @if (request('tag') && request('tag') == $tag->slug) global-search__tag-item--active @endif">
+            <a class="global-search__tag-link" href="{{ route('page.products') }}?tag={{ $tag->slug }}">
+              {{ $tag->title }}
+            </a>
+          </li>
+        @endforeach
+      </ul>
+    </div>
+
+    <div id="global-search__result"></div>
   </form>
 </header>

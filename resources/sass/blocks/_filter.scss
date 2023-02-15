@@ -134,6 +134,10 @@
   }
 }
 
+.filter__prescription {
+  z-index: 2;
+}
+
 .filter__prescription-button,
 .filter__category-button {
   display: flex;

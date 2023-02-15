@@ -2058,9 +2058,28 @@ module.exports = {
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
   \*****************************/
-/***/ (function() {
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+var _this = undefined;
 
 var globalSearch = document.querySelector('.global-search');
+var debounce = function debounce(callback) {
+  var timeoutDelay = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 500;
+  var timeoutId;
+  return function () {
+    for (var _len = arguments.length, rest = new Array(_len), _key = 0; _key < _len; _key++) {
+      rest[_key] = arguments[_key];
+    }
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(function () {
+      return callback.apply(_this, rest);
+    }, timeoutDelay);
+  };
+};
 document.querySelector('.main-navigation__toggler').addEventListener('click', function () {
   return document.body.classList.toggle('page__body--menu-shown');
 });
@@ -2077,6 +2096,19 @@ function handleDocumentClick(evt) {
     globalSearch.addEventListener('click', handleGlobalSearchClick);
   }
 }
+globalSearch.addEventListener('input', debounce(function (evt) {
+  axios__WEBPACK_IMPORTED_MODULE_0___default().post('/data/search', {
+    keyword: evt.target.value
+  }).then(function (_ref) {
+    var data = _ref.data;
+    return document.querySelector('#global-search__result').innerHTML = data;
+  });
+}));
+document.querySelector('.global-search__button').addEventListener('click', function () {
+  if (document.querySelector('.global-search__results')) {
+    document.querySelector('.global-search__results').remove();
+  }
+});
 
 /***/ }),
 

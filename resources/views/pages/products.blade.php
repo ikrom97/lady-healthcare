@@ -51,7 +51,7 @@
 
           <div class="filter__tags">
             @foreach ($data['tags'] as $tag)
-              <input class="visually-hidden" type="radio" name="tag" id="{{ $tag->slug }}" value="{{ $tag->id }}">
+              <input class="visually-hidden" type="radio" name="tag" id="{{ $tag->slug }}" value="{{ $tag->id }}" @if (request('tag') && request('tag') == $tag->slug) checked @endif>
               <label class="filter__tag" for="{{ $tag->slug }}">{{ $tag->title }}</label>
             @endforeach
           </div>

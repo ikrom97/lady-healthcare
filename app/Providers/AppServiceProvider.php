@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\Tag;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Schema;
@@ -30,8 +31,10 @@ class AppServiceProvider extends ServiceProvider
     Paginator::useBootstrap();
 
     view()->composer('*', function ($view) {
-
-      return $view->with([]);
+      $tags = Tag::where('shown', true)->take(4)->get();
+      return $view->with([
+        'tags' => $tags,
+      ]);
     });
   }
 }

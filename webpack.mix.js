@@ -16,12 +16,12 @@ mix
   .sass('resources/sass/style.scss', 'public/css/style.min.css')
   .sourceMaps()
   .webpackConfig({
-    devtool: 'source-map'
+    devtool: 'source-map',
   })
   .options({
-    processCssUrls: false
+    processCssUrls: false,
   })
   .browserSync({
-    proxy: 'http://127.0.0.1:8000'
+    proxy: 'http://127.0.0.1:8000',
   })
   .version();
