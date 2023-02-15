@@ -18,7 +18,7 @@
       </li>
     </ul>
 
-    <div class="wysiwyg" data-text="contacts-info">
+    <div class="wysiwyg" id="contacts-info" data-text="contacts-info">
       {!! texts()['contacts-info'] !!}
     </div>
   </main>

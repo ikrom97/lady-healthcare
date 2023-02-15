@@ -43,16 +43,6 @@
           <use xlink:href="#close" />
         </svg>
       </button>
-
-      <ul class="global-search__tag-list">
-        @foreach ($tags as $tag)
-          <li class="global-search__tag-item @if (request('tag') && request('tag') == $tag->slug) global-search__tag-item--active @endif">
-            <a class="global-search__tag-link" href="{{ route('page.products') }}?tag={{ $tag->slug }}">
-              {{ $tag->title }}
-            </a>
-          </li>
-        @endforeach
-      </ul>
     </div>
 
     <div id="global-search__result"></div>

@@ -43,9 +43,9 @@
         <a class="pagination__link" href="{{ $paginator->url(1) }}">1</a>
       </li>
     @endif
-    @if ($paginator->currentPage() > 4)
+    {{-- @if ($paginator->currentPage() > 4)
       <li class="pagination__item pagination__item--dots">...</li>
-    @endif
+    @endif --}}
     @foreach (range(1, $paginator->lastPage()) as $i)
       @if ($i >= $paginator->currentPage() - 2 && $i <= $paginator->currentPage() + 2)
         @if ($i == $paginator->currentPage())
@@ -59,9 +59,9 @@
         @endif
       @endif
     @endforeach
-    @if ($paginator->currentPage() < $paginator->lastPage() - 3)
+    {{-- @if ($paginator->currentPage() < $paginator->lastPage() - 3)
       <li class="pagination__item pagination__item--dots">...</li>
-    @endif
+    @endif --}}
     @if ($paginator->currentPage() < $paginator->lastPage() - 2)
       <li class="pagination__item">
         <a class="pagination__link" href="{{ $paginator->url($paginator->lastPage()) }}">{{ $paginator->lastPage() }}</a>

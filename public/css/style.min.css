@@ -655,6 +655,7 @@ input[type=search]::-webkit-search-results-decoration {
   font-weight: 700;
 }
 .info-section__wysiwyg a {
+  margin-top: 24px;
   display: flex;
   align-items: center;
   justify-content: center;

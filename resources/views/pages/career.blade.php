@@ -18,7 +18,7 @@
       </li>
     </ul>
 
-    <div class="wysiwyg" data-text="career-info">
+    <div class="wysiwyg" id="career-info" data-text="career-info">
       {!! texts()['career-info'] !!}
     </div>
 
@@ -29,13 +29,13 @@
       <img class="career-content__image" src="{{ asset('images/career-content-image-mobile.jpg') }}" width="1792" height="464" alt="Карьера в Lady Healthcare">
     </picture>
 
-    <div class="career-content__steps wysiwyg" data-text="career-steps">
+    <div class="career-content__steps wysiwyg" id="career-steps" data-text="career-steps">
       {!! texts()['career-steps'] !!}
     </div>
 
     <section class="career-section">
       <div class="career-section__wysiwyg">
-        <div class="wysiwyg" data-text="career-job">
+        <div class="wysiwyg" id="career-job" data-text="career-job">
           {!! texts()['career-job'] !!}
         </div>
       </div>
