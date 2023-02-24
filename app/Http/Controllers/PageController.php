@@ -6,7 +6,6 @@ use App\Models\Category;
 use App\Models\Prescription;
 use App\Models\Product;
 use App\Models\Tag;
-use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
@@ -27,7 +26,7 @@ class PageController extends Controller
 
   public function products()
   {
-    $data['tags'] = Tag::where('shown', true)->take(4)->get();
+    $data['tags'] = Tag::where('shown', true)->get();
     $data['prescriptions'] = Prescription::orderBy('title')->get();
     $data['categories'] = Category::orderBy('title')->get();
 
@@ -37,6 +36,8 @@ class PageController extends Controller
   public function productsSelected($slug)
   {
     $product = Product::where('slug', $slug)->first();
+    $product->views++;
+    $product->update();
 
     return view('pages.products-selected', compact('product'));
   }
@@ -44,5 +45,10 @@ class PageController extends Controller
   public function contacts()
   {
     return view('pages.contacts');
+  }
+
+  public function admin()
+  {
+    return view('admin');
   }
 }

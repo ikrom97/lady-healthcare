@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DataController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\TextController;
@@ -28,3 +29,11 @@ Route::post('/data/products', [DataController::class, 'products']);
 Route::post('/data/products/filter', [DataController::class, 'productsFilter']);
 
 Route::post('/admin/texts/update', [TextController::class, 'update']);
+
+Route::post('/auth/check', [AuthController::class, 'check'])->name('auth.check');
+Route::get('/auth/logout', [AuthController::class, 'logout'])->name('auth.logout');
+Route::get('/auth/login', [AuthController::class, 'login'])->name('auth.login');
+
+Route::group(['middleware' => ['AuthCheck']], function () {
+  Route::get('/admin/{path?}/{path2?}/{path3?}', [PageController::class, 'admin'])->name('admin');
+});

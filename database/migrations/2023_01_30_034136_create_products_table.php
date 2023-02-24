@@ -17,14 +17,14 @@ class CreateProductsTable extends Migration
       $table->id();
       $table->string('title');
       $table->string('slug')->unique();
-      $table->text('description');
-      $table->string('category_id');
-      $table->string('prescription_id');
+      $table->text('description')->nullable();
+      $table->string('category_id')->nullable();
+      $table->string('prescription_id')->nullable();
       $table->string('image');
       $table->string('image_thumb');
       $table->string('file')->nullable();
       $table->string('url')->nullable();
-      $table->text('body')->nullable();
+      $table->longText('body')->nullable();
       $table->bigInteger('views')->default(0);
       $table->timestamps();
     });

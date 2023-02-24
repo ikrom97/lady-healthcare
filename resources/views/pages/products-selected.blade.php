@@ -33,18 +33,22 @@
         <img src="{{ asset($product->image) }}" alt="{{ $product->title }}">
 
         <div prescription="{{ $product->prescription->title }}">
-          <a class="button" href="{{ asset($product->file) }}" target="_blank">
-            <svg width="24" height="24">
-              <use xlink:href="#download" />
-            </svg>
-            Скачать инструкцию
-          </a>
-          <a class="button" href="{{ $product->url }}" target="_blank">
-            <svg width="24" height="24">
-              <use xlink:href="#basket" />
-            </svg>
-            Купить в аптеке
-          </a>
+          @if ($product->file)
+            <a class="button" href="{{ asset($product->file) }}" target="_blank">
+              <svg width="24" height="24">
+                <use xlink:href="#download" />
+              </svg>
+              Скачать инструкцию
+            </a>
+          @endif
+          @if ($product->url)
+            <a class="button" href="{{ asset($product->url) }}" target="_blank">
+              <svg width="24" height="24">
+                <use xlink:href="#basket" />
+              </svg>
+              Купить в аптеке
+            </a>
+          @endif
         </div>
       </div>
 

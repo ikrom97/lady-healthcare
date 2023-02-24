@@ -18,7 +18,7 @@
 
   <link rel="stylesheet" href="{{ mix('css/style.min.css') }}">
 
-  @if (session('admin'))
+  @if (session('loggedUser'))
     <link rel="stylesheet" href="{{ asset('simditor/simditor.css') }}">
   @endif
 
@@ -34,13 +34,13 @@
 
   <x-page-footer />
 
-  @if (session('admin'))
+  @if (session('loggedUser'))
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="{{ asset('simditor/module.js') }}"></script>
     <script src="{{ asset('simditor/hotkeys.js') }}"></script>
     <script src="{{ asset('simditor/uploader.js') }}"></script>
     <script src="{{ asset('simditor/simditor.js') }}"></script>
-    <script src="{{ asset('js/admin.js') }}"></script>
+    <script src="{{ asset('js/text.js') }}"></script>
   @endif
 
   <script src="{{ mix('js/app.js') }}"></script>
