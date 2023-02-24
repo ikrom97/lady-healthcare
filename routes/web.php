@@ -1,8 +1,12 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DataController;
 use App\Http\Controllers\PageController;
+use App\Http\Controllers\PrescriptionController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\TagController;
 use App\Http\Controllers\TextController;
 use Illuminate\Support\Facades\Route;
 
@@ -36,4 +40,22 @@ Route::get('/auth/login', [AuthController::class, 'login'])->name('auth.login');
 
 Route::group(['middleware' => ['AuthCheck']], function () {
   Route::get('/admin/{path?}/{path2?}/{path3?}', [PageController::class, 'admin'])->name('admin');
+
+  Route::get('/api/products', [ProductController::class, 'index']);
+  Route::get('/api/products/{product}', [ProductController::class, 'show']);
+  Route::post('/api/products', [ProductController::class, 'destroy']);
+  Route::post('/api/products-store', [ProductController::class, 'store']);
+  Route::post('/api/products-update', [ProductController::class, 'update']);
+
+  Route::get('/api/categories', [CategoryController::class, 'index']);
+  Route::post('/api/categories', [CategoryController::class, 'destroy']);
+  Route::post('/api/categories-store', [CategoryController::class, 'store']);
+  Route::post('/api/categories-update', [CategoryController::class, 'update']);
+
+  Route::get('/api/tags', [TagController::class, 'index']);
+  Route::post('/api/tags', [TagController::class, 'destroy']);
+  Route::post('/api/tags-store', [TagController::class, 'store']);
+  Route::post('/api/tags-update', [TagController::class, 'update']);
+
+  Route::get('/api/prescriptions', [PrescriptionController::class, 'index']);
 });
