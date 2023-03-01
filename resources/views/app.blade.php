@@ -38,6 +38,27 @@
   @endif
 
   <title>@yield('title')</title>
+</head>
+
+<body class="page__body">
+  <x-icons />
+
+  <x-page-header />
+
+  @yield('content')
+
+  <x-page-footer />
+
+  @if (session('loggedUser'))
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="{{ asset('simditor/module.js') }}"></script>
+    <script src="{{ asset('simditor/hotkeys.js') }}"></script>
+    <script src="{{ asset('simditor/uploader.js') }}"></script>
+    <script src="{{ asset('simditor/simditor.js') }}"></script>
+    <script src="{{ asset('js/text.js') }}"></script>
+  @endif
+
+  <script src="{{ mix('js/app.js') }}"></script>
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-123986695-20"></script>
@@ -76,27 +97,6 @@
     });
   </script>
   <!-- /Yandex.Metrika counter -->
-</head>
-
-<body class="page__body">
-  <x-icons />
-
-  <x-page-header />
-
-  @yield('content')
-
-  <x-page-footer />
-
-  @if (session('loggedUser'))
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="{{ asset('simditor/module.js') }}"></script>
-    <script src="{{ asset('simditor/hotkeys.js') }}"></script>
-    <script src="{{ asset('simditor/uploader.js') }}"></script>
-    <script src="{{ asset('simditor/simditor.js') }}"></script>
-    <script src="{{ asset('js/text.js') }}"></script>
-  @endif
-
-  <script src="{{ mix('js/app.js') }}"></script>
 </body>
 
 </html>
