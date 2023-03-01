@@ -2,6 +2,20 @@
 
 @section('title', 'Lady healthcare | ' . $product->title)
 
+@section('meta-tags')
+  @php
+  $share_text = preg_replace('#<[^>]+>#', ' ', $product->description);
+  $share_text = mb_strlen($share_text) < 170 ? $share_text : mb_substr($share_text, 0, 166) . '...';
+  @endphp
+  <meta name="description" content="{{ $share_text }}">
+  <meta property="og:description" content="{{ $share_text }}">
+  <meta property="og:title" content="{{ $product->title }}" />
+  <meta property="og:image" content="{{ asset($product->image) }}">
+  <meta property="og:image:alt" content="{{ $product->title }}">
+  <meta name="twitter:title" content="{{ $product->title }}">
+  <meta name="twitter:image" content="{{ asset($product->image) }}">
+@endsection
+
 @section('content')
   <main class="products-selected content container">
     <ul class="breadcrumbs">
